@@ -2,10 +2,10 @@
 Sub QueryAndLoadData()
     ' クエリ名を指定
     Dim query_name As String
-    query_name = "更新"
+    query_name = "全検査結果一覧"
     'テーブル名を指定
     Dim table_name As String
-    table_name = "更新"
+    table_name = "全検査結果一覧"
     'シート名を指定
 
     ' クエリが存在するか確認
@@ -18,6 +18,8 @@ Sub CopyToNewSheet()
 
     Dim sheet_name As String
     sheet_name = "DATA"
+    Dim table_name As String
+    table_name = "全検査結果一覧"
 
     ' 新規シートを作成、すでにシートが存在する場合は末尾に数字を付加
     Dim ws As Worksheet
@@ -25,13 +27,10 @@ Sub CopyToNewSheet()
 
     ' テーブルを取得
     Dim sourceTable As ListObject
-    Set sourceTable = GetTableByName("更新")
+    Set sourceTable = GetTableByName(table_name)
 
     ' sourceTable のデータを新規シートにコピー
     sourceTable.Range.Copy Destination:=ws.Cells(1, 1)
-
-    '新規シートへ貼り付けたテーブル名を変更
-    ws.ListObjects(1).Name = sheet_name
 
 End Sub
 
