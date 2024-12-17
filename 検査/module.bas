@@ -27,6 +27,8 @@ End Sub
 
 ' 表示行の値を指定した列にコピーする
 Sub UpdateActiveRowFromViewRow()
+'画面がちらつかないようにする
+Application.ScreenUpdating = False
   '反映する列の番号を配列で指定
   Dim cols As Variant
   cols = Array(10, 11, 12, 13, 14)
@@ -44,6 +46,8 @@ Sub UpdateActiveRowFromViewRow()
   For Each col In cols
     ws.Cells(active_row, col).Value = ws.Cells(view_row, col).Value
   Next col
+  '画面を更新
+  Application.ScreenUpdating = True
 End Sub
 'j1からm1のセルに入力された文字列を、j2からm2のセルの文字列の先頭にそれぞれ追記する
 Sub PrependViewRow()
