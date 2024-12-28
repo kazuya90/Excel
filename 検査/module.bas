@@ -20,9 +20,7 @@ Sub ShowActiveRowToViewRow()
         '選択行番号をA1セルに表示する
         ws.Cells(1, 1).Value = active_row
     End If
-    Next col
-    
-
+    Next col    
 End Sub
 
 ' 表示行の値を指定した列にコピーする
@@ -49,6 +47,7 @@ Application.ScreenUpdating = False
   '画面を更新
   Application.ScreenUpdating = True
 End Sub
+
 'j1からm1のセルに入力された文字列を、j2からm2のセルの文字列の先頭にそれぞれ追記する
 Sub PrependViewRow()
     Dim ws As Worksheet
