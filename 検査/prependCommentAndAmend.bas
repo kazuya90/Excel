@@ -12,6 +12,8 @@ Dim commentCell As range
 Dim targetCell As range
 Dim ammendCell As range
 
+dim targetRow as range
+
 Sub main()
   Application.ScreenUpdating = False
   Set wsInspection = Sheets("検査")
@@ -25,6 +27,8 @@ Sub main()
   Set commentCell = wsInspection.range("G2")
   Set targetCell = wsInspection.range("H2")
   Set ammendCell = wsInspection.range("I2")
+
+  set targetRow = wsDev.range("B2")
 
   Dim comment As String
   Dim target As String
